@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals - Swasthya Setu</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/styles_additional.css">
+    <link rel="stylesheet" href="../static/styles_pages.css">
+    <link rel="stylesheet" href="../static/styles_glow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../static/scripts/api.js" defer></script>
+    <script src="../static/scripts/auth.js" defer></script>
+    <script src="../static/scripts/main.js" defer></script>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo">
+            <a href="index.html">Swasthya Setu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitals.html" class="active">Hospitals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login_button"><a href="login.html">Login</a></div>
+    </nav>
+
+    <header>
+        <h1>Our Network Hospitals</h1>
+        <p class="tagline">Find the best healthcare facilities in your area</p>
+    </header>
+
+    <div class="search-filter-container">
+        <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="hospital-search" placeholder="Search hospitals by name or location...">
+        </div>
+        <div class="filter-options">
+            <select id="specialty-filter">
+                <option value="">All Specialties</option>
+                <option value="heart">Heart</option>
+                <option value="kidney">Kidney</option>
+                <option value="brain">Brain</option>
+                <option value="lungs">Lungs</option>
+                <option value="liver">Liver</option>
+            </select>
+            <select id="rating-filter">
+                <option value="0">All Ratings</option>
+                <option value="4">4+ Stars</option>
+                <option value="3">3+ Stars</option>
+                <option value="2">2+ Stars</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="hospitals-container">
+        <!-- Hospital Card 1 -->
+        <div class="hospital-card" data-id="1" data-rating="5">
+            <div class="hospital-image">
+                <img src="./home_1.jpg" alt="Care Hospital">
+                <div class="hospital-badge">Premium</div>
+            </div>
+            <div class="hospital-info">
+                <h3>Care Hospital</h3>
+                <p class="hospital-address">123 Health Avenue, Medical District, City</p>
+                <div class="hospital-specialties">
+                    <span class="hospital-specialty">Heart</span>
+                    <span class="hospital-specialty">Kidney</span>
+                    <span class="hospital-specialty">Neurology</span>
+                </div>
+                <div class="hospital-rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="rating-value">5.0</span>
+                    <span class="rating-count">(120 reviews)</span>
+                </div>
+                <div class="hospital-features">
+                    <span><i class="fas fa-ambulance"></i> 24/7 Emergency</span>
+                    <span><i class="fas fa-procedures"></i> 200+ Beds</span>
+                    <span><i class="fas fa-user-md"></i> 50+ Specialists</span>
+                </div>
+                <div class="doctor-list">
+                    <h4>Key Doctors:</h4>
+                    <span class="doctor-name">Dr. Rajesh Kumar</span>
+                    <span class="doctor-name">Dr. Priya Sharma</span>
+                    <span class="doctor-name">Dr. Amit Patel</span>
+                </div>
+                <div class="hospital-actions">
+                    <a href="hospital_detail.html?id=1" class="btn btn-primary">View Details</a>
+                    <a href="booking_page.html?hospital=1" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hospital Card 2 -->
+        <div class="hospital-card" data-id="2" data-rating="4.5">
+            <div class="hospital-image">
+                <img src="./home_1.jpg" alt="KIMS Hospital">
+            </div>
+            <div class="hospital-info">
+                <h3>KIMS Hospital</h3>
+                <p class="hospital-address">456 Wellness Road, Healthcare Zone, City</p>
+                <div class="hospital-specialties">
+                    <span class="hospital-specialty">Kidney</span>
+                    <span class="hospital-specialty">Orthopedics</span>
+                    <span class="hospital-specialty">Cardiology</span>
+                </div>
+                <div class="hospital-rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star half">★</span>
+                    <span class="rating-value">4.5</span>
+                    <span class="rating-count">(98 reviews)</span>
+                </div>
+                <div class="hospital-features">
+                    <span><i class="fas fa-ambulance"></i> 24/7 Emergency</span>
+                    <span><i class="fas fa-procedures"></i> 150+ Beds</span>
+                    <span><i class="fas fa-user-md"></i> 40+ Specialists</span>
+                </div>
+                <div class="doctor-list">
+                    <h4>Key Doctors:</h4>
+                    <span class="doctor-name">Dr. Sunita Verma</span>
+                    <span class="doctor-name">Dr. Rahul Gupta</span>
+                </div>
+                <div class="hospital-actions">
+                    <a href="hospital_detail.html?id=2" class="btn btn-primary">View Details</a>
+                    <a href="booking_page.html?hospital=2" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hospital Card 3 -->
+        <div class="hospital-card" data-id="3" data-rating="4.2">
+            <div class="hospital-image">
+                <img src="./home_1.jpg" alt="Apollo Hospital">
+            </div>
+            <div class="hospital-info">
+                <h3>Apollo Hospital</h3>
+                <p class="hospital-address">789 Medical Park, Healing Center, City</p>
+                <div class="hospital-specialties">
+                    <span class="hospital-specialty">Brain</span>
+                    <span class="hospital-specialty">Pediatrics</span>
+                    <span class="hospital-specialty">Oncology</span>
+                </div>
+                <div class="hospital-rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star empty">☆</span>
+                    <span class="rating-value">4.2</span>
+                    <span class="rating-count">(85 reviews)</span>
+                </div>
+                <div class="hospital-features">
+                    <span><i class="fas fa-ambulance"></i> 24/7 Emergency</span>
+                    <span><i class="fas fa-procedures"></i> 180+ Beds</span>
+                    <span><i class="fas fa-user-md"></i> 45+ Specialists</span>
+                </div>
+                <div class="doctor-list">
+                    <h4>Key Doctors:</h4>
+                    <span class="doctor-name">Dr. Meera Reddy</span>
+                    <span class="doctor-name">Dr. Vikram Singh</span>
+                </div>
+                <div class="hospital-actions">
+                    <a href="hospital_detail.html?id=3" class="btn btn-primary">View Details</a>
+                    <a href="booking_page.html?hospital=3" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hospital Card 4 -->
+        <div class="hospital-card" data-id="4" data-rating="4.8">
+            <div class="hospital-image">
+                <img src="./home_1.jpg" alt="Sunshine Hospital">
+                <div class="hospital-badge">Premium</div>
+            </div>
+            <div class="hospital-info">
+                <h3>Sunshine Hospital</h3>
+                <p class="hospital-address">101 Recovery Street, Wellness District, City</p>
+                <div class="hospital-specialties">
+                    <span class="hospital-specialty">Lungs</span>
+                    <span class="hospital-specialty">Kidney</span>
+                    <span class="hospital-specialty">Gastroenterology</span>
+                </div>
+                <div class="hospital-rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="rating-value">4.8</span>
+                    <span class="rating-count">(110 reviews)</span>
+                </div>
+                <div class="hospital-features">
+                    <span><i class="fas fa-ambulance"></i> 24/7 Emergency</span>
+                    <span><i class="fas fa-procedures"></i> 220+ Beds</span>
+                    <span><i class="fas fa-user-md"></i> 60+ Specialists</span>
+                </div>
+                <div class="doctor-list">
+                    <h4>Key Doctors:</h4>
+                    <span class="doctor-name">Dr. Ananya Desai</span>
+                    <span class="doctor-name">Dr. Karthik Iyer</span>
+                    <span class="doctor-name">Dr. Neha Sharma</span>
+                </div>
+                <div class="hospital-actions">
+                    <a href="hospital_detail.html?id=4" class="btn btn-primary">View Details</a>
+                    <a href="booking_page.html?hospital=4" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <button class="pagination-btn next">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Swasthya Setu</div>
+            <p>Your bridge to quality healthcare since 2023</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Swasthya Setu. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Hospital search and filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('hospital-search');
+            const specialtyFilter = document.getElementById('specialty-filter');
+            const ratingFilter = document.getElementById('rating-filter');
+            const hospitalCards = document.querySelectorAll('.hospital-card');
+            
+            // Function to filter hospitals
+            function filterHospitals() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const specialty = specialtyFilter.value.toLowerCase();
+                const minRating = parseFloat(ratingFilter.value);
+                
+                hospitalCards.forEach(card => {
+                    const hospitalName = card.querySelector('h3').textContent.toLowerCase();
+                    const hospitalAddress = card.querySelector('.hospital-address').textContent.toLowerCase();
+                    const hospitalSpecialties = Array.from(card.querySelectorAll('.hospital-specialty')).map(el => el.textContent.toLowerCase());
+                    const hospitalRating = parseFloat(card.getAttribute('data-rating'));
+                    
+                    // Check if hospital matches all filters
+                    const matchesSearch = hospitalName.includes(searchTerm) || hospitalAddress.includes(searchTerm);
+                    const matchesSpecialty = specialty === '' || hospitalSpecialties.includes(specialty);
+                    const matchesRating = hospitalRating >= minRating;
+                    
+                    if (matchesSearch && matchesSpecialty && matchesRating) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Add event listeners
+            searchInput.addEventListener('input', filterHospitals);
+            specialtyFilter.addEventListener('change', filterHospitals);
+            ratingFilter.addEventListener('change', filterHospitals);
+            
+            // Add staggered animation to doctor names
+            const doctorNames = document.querySelectorAll('.doctor-name');
+            doctorNames.forEach((doctor, index) => {
+                // Add staggered animation delay
+                doctor.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
+    </script>
+</body>
+
+</html>

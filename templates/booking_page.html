@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Swasthya Setu</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/styles_additional.css">
+    <link rel="stylesheet" href="../static/styles_pages.css">
+    <link rel="stylesheet" href="../static/styles_booking.css">
+    <link rel="stylesheet" href="../static/styles_glow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../static/scripts/api_config.js" defer></script>
+    <script src="../static/scripts/api.js" defer></script>
+    <script src="../static/scripts/auth.js" defer></script>
+    <script src="../static/scripts/booking_loader.js" defer></script>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo">
+            <a href="index.html">Swasthya Setu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitals.html">Hospitals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login_button">
+            <!-- This will be replaced by auth.js -->
+        </div>
+    </nav>
+
+    <header class="booking-header">
+        <h1>Book Your Appointment</h1>
+        <p class="tagline">Schedule a visit with our top healthcare specialists</p>
+    </header>
+
+    <div class="booking-container">
+        <div class="auth-check-container hidden" id="auth-check">
+            <div class="auth-check-content">
+                <i class="fas fa-lock"></i>
+                <h2>Authentication Required</h2>
+                <p>You need to be logged in to book an appointment.</p>
+                <div class="auth-check-actions">
+                    <a href="login.html?redirect=booking_page.html" class="btn btn-primary">Login</a>
+                    <a href="register.html" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-steps">
+            <div class="step active">
+                <div class="step-number">1</div>
+                <div class="step-text">Select Hospital & Service</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Choose Date & Time</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">Patient Details</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-text">Confirmation</div>
+            </div>
+        </div>
+
+        <form id="booking-form" class="booking-form">
+            <div class="booking-section active" id="step-1">
+                <h2>Select Hospital and Service</h2>
+                
+                <div class="form-group">
+                    <label for="location">Select Location</label>
+                    <div class="select-wrapper">
+                        <select name="location" id="location" required>
+                            <option value="">Select a Location</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hospital">Select Hospital</label>
+                    <div class="select-wrapper">
+                        <select name="hospital" id="hospital" required>
+                            <option value="">Select a Hospital</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <div class="select-wrapper">
+                        <select name="service" id="service" required>
+                            <option value="">Select a Service</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="doctor">Select Doctor (Optional)</label>
+                    <div class="select-wrapper doctor-select-wrapper">
+                        <select name="doctor" id="doctor">
+                            <option value="">Any Available Doctor</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="doctor-preview" id="doctor-preview"></div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-primary next-step">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="booking-section" id="step-2">
+                <h2>Choose Date and Time</h2>
+                
+                <div class="date-time-container">
+                    <div class="form-group date-picker-container">
+                        <label for="appointmentDate">Select Date</label>
+                        <div class="input-icon-wrapper">
+                            <input type="date" id="appointmentDate" name="appointmentDate" required>
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointmentTime">Select Time</label>
+                        <div class="select-wrapper">
+                            <select name="appointmentTime" id="appointmentTime" required>
+                                <option value="">Select Time</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="09:30 AM">09:30 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="12:30 PM">12:30 PM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="02:30 PM">02:30 PM</option>
+                                <option value="03:00 PM">03:00 PM</option>
+                                <option value="03:30 PM">03:30 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                                <option value="04:30 PM">04:30 PM</option>
+                                <option value="05:00 PM">05:00 PM</option>
+                                <option value="05:30 PM">05:30 PM</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-slots">
+                    <h3>Available Time Slots</h3>
+                    <div class="time-slots-grid" id="time-slots-grid">
+                        <!-- Time slots will be populated dynamically -->
+                        <div class="time-slot">09:00 AM</div>
+                        <div class="time-slot">09:30 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">10:30 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">11:30 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot">12:30 PM</div>
+                        <div class="time-slot">02:00 PM</div>
+                        <div class="time-slot">02:30 PM</div>
+                        <div class="time-slot">03:00 PM</div>
+                        <div class="time-slot">03:30 PM</div>
+                        <div class="time-slot">04:00 PM</div>
+                        <div class="time-slot">04:30 PM</div>
+                        <div class="time-slot">05:00 PM</div>
+                        <div class="time-slot">05:30 PM</div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="button" class="btn btn-primary next-step">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="booking-section" id="step-3">
+                <h2>Patient Details</h2>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="patientName">Full Name</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="patientName" name="patientName" placeholder="Enter patient's full name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="patientAge">Age</label>
+                        <div class="input-icon-wrapper">
+                            <input type="number" id="patientAge" name="patientAge" placeholder="Enter patient's age" required>
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientGender">Gender</label>
+                    <div class="select-wrapper">
+                        <select name="patientGender" id="patientGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="patientPhone">Phone Number</label>
+                        <div class="input-icon-wrapper">
+                            <input type="tel" id="patientPhone" name="patientPhone" placeholder="Enter contact number" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="patientEmail">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <input type="email" id="patientEmail" name="patientEmail" placeholder="Enter email address" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="symptoms">Symptoms/Reason for Visit</label>
+                    <textarea id="symptoms" name="symptoms" placeholder="Briefly describe your symptoms or reason for visit" rows="3"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="button" class="btn btn-primary next-step">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="booking-section" id="step-4">
+                <h2>Appointment Summary</h2>
+                
+                <div class="appointment-summary">
+                    <div class="summary-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Review Your Appointment Details</h3>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-hospital"></i> Hospital:</div>
+                        <div class="summary-value" id="summary-hospital"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-stethoscope"></i> Service:</div>
+                        <div class="summary-value" id="summary-service"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-user-md"></i> Doctor:</div>
+                        <div class="summary-value doctor-name" id="summary-doctor"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-calendar-day"></i> Date:</div>
+                        <div class="summary-value" id="summary-date"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-clock"></i> Time:</div>
+                        <div class="summary-value" id="summary-time"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-user"></i> Patient:</div>
+                        <div class="summary-value" id="summary-patient"></div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <div class="summary-label"><i class="fas fa-phone"></i> Contact:</div>
+                        <div class="summary-value" id="summary-contact"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group terms">
+                    <input type="checkbox" id="confirm-terms" name="confirm-terms" required>
+                    <label for="confirm-terms">I confirm that the information provided is correct and agree to the <a href="terms.html">Terms of Service</a></label>
+                </div>
+                
+                <div id="booking-message" class="message hidden"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="submit" class="btn btn-primary">Confirm Booking <i class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Swasthya Setu</div>
+            <p>Your bridge to quality healthcare since 2023</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Swasthya Setu. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

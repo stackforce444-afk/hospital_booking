@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Swasthya Setu</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/styles_additional.css">
+    <link rel="stylesheet" href="../static/styles_pages.css">
+    <link rel="stylesheet" href="../static/styles_glow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../static/scripts/api.js" defer></script>
+    <script src="../static/scripts/auth.js" defer></script>
+    <script src="../static/scripts/main.js" defer></script>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo">
+            <a href="index.html">Swasthya Setu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="hospitals.html">Hospitals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login_button"><a href="login.html">Login</a></div>
+    </nav>
+
+    <header>
+        <h1>Our Medical Services</h1>
+        <p class="tagline">Comprehensive healthcare solutions for all your needs</p>
+    </header>
+
+    <div class="service-categories">
+        <button class="category-btn active" data-category="all">All Services</button>
+        <button class="category-btn" data-category="heart">Heart</button>
+        <button class="category-btn" data-category="brain">Brain</button>
+        <button class="category-btn" data-category="kidney">Kidney</button>
+        <button class="category-btn" data-category="lungs">Lungs</button>
+        <button class="category-btn" data-category="liver">Liver</button>
+        <button class="category-btn" data-category="general">General</button>
+        <button class="category-btn" data-category="ortho">Orthopedics</button>
+        <button class="category-btn" data-category="pediatric">Pediatrics</button>
+    </div>
+
+    <div class="services-container">
+        <div class="service-card" data-category="brain">
+            <div class="service-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h3>Neurology</h3>
+            <p>Expert care for neurological conditions and disorders</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href = "booking_page.html">Dr.Neha Sharma</a></span>
+                <span class="doctor-name"><a href="booking_page.html">Dr.Rajiv Mehta</a></span>
+            </div>
+            <a href="neurology_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="heart">
+            <div class="service-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Cardiology</h3>
+            <p>Comprehensive heart care and cardiac treatments</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href = "booking_page.html">Dr.Hriday Sharma</a></span>
+                <span class="doctor-name"><a href = "booking_page.html">Dr.Rajiv Mehta</a></span>
+            </div>
+            <a href="heart_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="kidney">
+            <div class="service-icon">
+                <i class="fas fa-procedures"></i>
+            </div>
+            <h3>Nephrology</h3>
+            <p>Specialized kidney care and treatments</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href = "booking_page.html">Dr. Acharya Dhanvantari</a></span>
+            </div>
+            <a href="kidney_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="lungs">
+            <div class="service-icon">
+                <i class="fas fa-lungs"></i>
+            </div>
+            <h3>Pulmonology</h3>
+            <p>Advanced respiratory care and treatments</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href = "booking_page.html">Dr.Anil Kapoor</a></span>
+            </div>
+            <a href="pulmonology_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="liver">
+            <div class="service-icon">
+                <i class="fas fa-pills"></i>
+            </div>
+            <h3>Hepatology</h3>
+            <p>Specialized liver care and treatments</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Sanjay Gupta</a></span>
+            </div>
+            <a href="hepatology_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="general">
+            <div class="service-icon">
+                <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>General Medicine</h3>
+            <p>Primary healthcare for common illnesses</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Ramesh Kumar</a></span>
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Sunita Reddy</a></span>
+            </div>
+            <a href="general_medicine_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="ortho">
+            <div class="service-icon">
+                <i class="fas fa-bone"></i>
+            </div>
+            <h3>Orthopedics</h3>
+            <p>Bone and joint care specialists</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Rajesh Singh</a></span>
+            </div>
+            <a href="orthopedics_service.html">Learn More</a>
+        </div>
+        
+        <div class="service-card" data-category="pediatric">
+            <div class="service-icon">
+                <i class="fas fa-baby"></i>
+            </div>
+            <h3>Pediatrics</h3>
+            <p>Specialized healthcare for children</p>
+            <div class="service-doctors">
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Meera Patel</a></span>
+                <span class="doctor-name"><a href="./booking_page.html">Dr. Ramesh Kumar</a></span>
+            </div>
+            <a href="pediatrics_service.html">Learn More</a>
+        </div>
+    </div>
+
+    <section class="service-cta">
+        <div class="cta-content">
+            <h2>Need Specialized Care?</h2>
+            <p>Our team of expert doctors is ready to help you with personalized treatment plans</p>
+            <a href="booking_page.html" class="cta-button">Book an Appointment</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Swasthya Setu</div>
+            <p>Your bridge to quality healthcare since 2023</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Swasthya Setu. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Service filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show all services if "All Services" is selected
+                    if (category === 'all') {
+                        serviceCards.forEach(card => {
+                            card.style.display = 'flex';
+                            // Add animation
+                            card.style.animation = 'fadeIn 0.5s ease-out';
+                        });
+                    } else {
+                        // Show only services matching the selected category
+                        serviceCards.forEach(card => {
+                            if (card.getAttribute('data-category') === category) {
+                                card.style.display = 'flex';
+                                // Add animation
+                                card.style.animation = 'fadeIn 0.5s ease-out';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Add staggered animation to doctor names
+            const doctorNames = document.querySelectorAll('.doctor-name');
+            doctorNames.forEach((doctor, index) => {
+                // Add staggered animation delay
+                doctor.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
+    </script>
+</body>
+
+</html>

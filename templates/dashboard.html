@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Swasthya Setu</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/styles_additional.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../static/scripts/api_config.js" defer></script>
+    <script src="../static/scripts/api.js" defer></script>
+    <script src="../static/scripts/auth.js" defer></script>
+    <script src="../static/scripts/dashboard.js" defer></script>
+    <script src="../static/scripts/dashboard_functions.js" defer></script>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo">
+            <a href="index.html">Swasthya Setu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitals.html">Hospitals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        </ul>
+        <div class="login_button">
+            <!-- This will be replaced by auth.js -->
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-sidebar">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-name" id="user-name">Loading...</div>
+            </div>
+            
+            <ul class="dashboard-menu">
+                <li class="active"><a href="#appointments"><i class="fas fa-calendar-check"></i> My Appointments</a></li>
+                <li><a href="#profile"><i class="fas fa-user"></i> My Profile</a></li>
+                <li><a href="#medical-records"><i class="fas fa-file-medical"></i> Medical Records</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>My Dashboard</h1>
+                <a href="booking_page.html" class="btn-primary"><i class="fas fa-plus"></i> Book New Appointment</a>
+            </div>
+            
+            <div class="dashboard-section" id="appointments-section">
+                <div class="section-header">
+                    <h2>My Appointments</h2>
+                    <div class="section-actions">
+                        <select id="appointment-filter">
+                            <option value="all">All Appointments</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="past">Past</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="appointments-list" id="appointments-list">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading appointments...</p>
+                    </div>
+                </div>
+                
+                <div class="no-appointments hidden" id="no-appointments">
+                    <div class="empty-state">
+                        <i class="fas fa-calendar-times"></i>
+                        <h3>No Appointments Found</h3>
+                        <p>You don't have any appointments scheduled yet.</p>
+                        <a href="booking_page.html" class="btn-primary">Book Your First Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Swasthya Setu</div>
+            <p>Your bridge to quality healthcare since 2023</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Swasthya Setu. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

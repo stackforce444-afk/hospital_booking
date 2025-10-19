@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Details - Swasthya Setu</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/scripts/main.js"></script>
+    <script src="../static/scripts/hospitals.js"></script>
+</head>
+
+<body>
+    <h1 class="hospital-name">Care Hospital</h1>
+    
+    <nav class="bar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitals.html" class="active">Hospitals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login_button"><a href="login.html">Login</a></div>
+    </nav>
+
+    <div class="hospital-detail-container">
+        <div class="hospital-detail-header">
+            <div class="hospital-detail-image">
+                <img src="./home_1.jpg" alt="Care Hospital">
+            </div>
+            <div class="hospital-detail-info">
+                <div class="hospital-rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="rating-value">5.0</span>
+                    <span class="rating-count">(120 reviews)</span>
+                </div>
+                <p class="hospital-address">123 Health Avenue, Medical District, City</p>
+                <div class="hospital-contact">
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                    <p><strong>Email:</strong> info@carehospital.com</p>
+                    <p><strong>Website:</strong> <a href="https://www.carehospital.com" target="_blank">www.carehospital.com</a></p>
+                </div>
+                <div class="hospital-actions">
+                    <a href="booking_page.html?hospital=1" class="btn btn-primary book-appointment-btn">Book Appointment</a>
+                    <a href="tel:+919876543210" class="btn btn-secondary">Call Hospital</a>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-secondary">Get Directions</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hospital-detail-content">
+            <div class="hospital-detail-section">
+                <h2>About Care Hospital</h2>
+                <div class="hospital-description">
+                    <p>Care Hospital is a multi-specialty healthcare facility committed to providing exceptional medical care with compassion and expertise. Established in 2005, our hospital has grown to become one of the leading healthcare providers in the region.</p>
+                    <p>Our state-of-the-art facilities, combined with our team of experienced medical professionals, ensure that patients receive the highest standard of care. We pride ourselves on our patient-centered approach, focusing on personalized treatment plans and comprehensive care.</p>
+                </div>
+            </div>
+            
+            <div class="hospital-detail-section">
+                <h2>Our Specialties</h2>
+                <div class="hospital-specialties">
+                    <ul>
+                        <li>Cardiology</li>
+                        <li>Nephrology</li>
+                        <li>Neurology</li>
+                        <li>Orthopedics</li>
+                        <li>Gastroenterology</li>
+                        <li>Oncology</li>
+                        <li>Pediatrics</li>
+                        <li>Gynecology</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="hospital-detail-section">
+                <h2>Facilities & Services</h2>
+                <div class="hospital-facilities">
+                    <ul>
+                        <li>24/7 Emergency Care</li>
+                        <li>ICU & Critical Care Units</li>
+                        <li>Advanced Diagnostic Center</li>
+                        <li>Modern Operation Theaters</li>
+                        <li>Dialysis Center</li>
+                        <li>Cardiac Catheterization Lab</li>
+                        <li>Physiotherapy & Rehabilitation</li>
+                        <li>Pharmacy</li>
+                        <li>Ambulance Services</li>
+                        <li>Telemedicine Consultations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="hospital-detail-section">
+                <h2>Our Doctors</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card-small">
+                        <h3>Dr. Hridaya Sharma</h3>
+                        <p>Cardiology</p>
+                        <div class="doctor-rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                        <a href="booking_page.html?hospital=1&doctor=1" class="btn btn-small">Book</a>
+                    </div>
+                    
+                    <div class="doctor-card-small">
+                        <h3>Dr. Acharya Dhanvantari</h3>
+                        <p>Nephrology</p>
+                        <div class="doctor-rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                        <a href="booking_page.html?hospital=1&doctor=2" class="btn btn-small">Book</a>
+                    </div>
+                    
+                    <div class="doctor-card-small">
+                        <h3>Dr. Sunita Reddy</h3>
+                        <p>Cardiology</p>
+                        <div class="doctor-rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star half">★</span>
+                            <span class="rating-value">4.2</span>
+                        </div>
+                        <a href="booking_page.html?hospital=1&doctor=3" class="btn btn-small">Book</a>
+                    </div>
+                    
+                    <div class="doctor-card-small">
+                        <h3>Dr. Vikram Desai</h3>
+                        <p>Neurology</p>
+                        <div class="doctor-rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star half">★</span>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                        <a href="booking_page.html?hospital=1&doctor=4" class="btn btn-small">Book</a>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="hospital_doctors.html?hospital=1">View All Doctors</a>
+                </div>
+            </div>
+            
+            <div class="hospital-detail-section">
+                <h2>Location & Directions</h2>
+                <div id="hospital-map" class="hospital-map">
+                    <!-- Replace with actual map embed -->
+                    <img src="./home_1.jpg" alt="Hospital location map" style="width: 100%; height: 400px; object-fit: cover;">
+                </div>
+                <div class="hospital-directions">
+                    <h3>How to Reach</h3>
+                    <p><strong>By Car:</strong> Located on Health Avenue, easily accessible from the main highway. Free parking available for patients and visitors.</p>
+                    <p><strong>By Public Transport:</strong> Bus routes 101, 203, and 305 stop directly in front of the hospital. The nearest metro station is Medical Center (1 km away).</p>
+                    <p><strong>From Airport:</strong> 15 km from International Airport. Taxi services available at the airport.</p>
+                </div>
+            </div>
+            
+            <div class="hospital-detail-section">
+                <h2>Patient Reviews</h2>
+                <div class="reviews-container">
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer-name">Rahul Sharma</div>
+                            <div class="review-rating">
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                            </div>
+                            <div class="review-date">May 15, 2025</div>
+                        </div>
+                        <div class="review-content">
+                            <p>Excellent care and attention from all staff. Dr. Sharma was very thorough in explaining my condition and treatment options. The facilities are modern and clean. Highly recommend!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer-name">Priya Patel</div>
+                            <div class="review-rating">
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star empty">☆</span>
+                            </div>
+                            <div class="review-date">April 28, 2025</div>
+                        </div>
+                        <div class="review-content">
+                            <p>Very good experience overall. The doctors are knowledgeable and caring. Wait times could be improved, but the quality of care made up for it.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer-name">Amit Kumar</div>
+                            <div class="review-rating">
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                            </div>
+                            <div class="review-date">March 10, 2025</div>
+                        </div>
+                        <div class="review-content">
+                            <p>I had my cardiac procedure done here and couldn't be happier with the results. The cardiac team is exceptional, and the follow-up care has been outstanding. The hospital is well-maintained and has all the latest equipment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="hospital_reviews.html?hospital=1">View All Reviews</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #ECEFF1; color: #263238; margin-top: 40px;">
+        &copy; 2025 Swasthya Setu. All rights reserved.
+    </footer>
+</body>
+
+</html>
